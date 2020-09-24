@@ -15,11 +15,33 @@
  */
 package org.apache.ibatis.reflection;
 
+/**
+ * ReflectorFactory接口主要实现对Reflector对象的创建和缓存
+ */
 public interface ReflectorFactory {
 
+  /**
+   * 是否开启了缓存
+   * 检测该ReflectorFactory对象是否会缓存Reflector对象
+   *
+   * @return 真/假
+   */
   boolean isClassCacheEnabled();
 
+  /**
+   * 设置是否启用缓存
+   * 设置是否缓存Reflector对象
+   *
+   * @param classCacheEnabled 真/假
+   */
   void setClassCacheEnabled(boolean classCacheEnabled);
 
+  /**
+   * 获取指定类的缓存信息
+   * 创建指定Class对应的Reflector对象
+   *
+   * @param type 类对象
+   * @return Reflector对象
+   */
   Reflector findForClass(Class<?> type);
 }

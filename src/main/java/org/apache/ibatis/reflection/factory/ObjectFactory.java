@@ -20,6 +20,7 @@ import java.util.Properties;
 
 /**
  * MyBatis uses an ObjectFactory to create all needed new Objects.
+ * Mybatis的对象创建工厂
  *
  * @author Clinton Begin
  */
@@ -27,7 +28,8 @@ public interface ObjectFactory {
 
   /**
    * Sets configuration properties.
-   * @param properties configuration properties
+   * 配置运行时需要使用的参数
+   * @param properties configuration properties 配置参数
    */
   default void setProperties(Properties properties) {
     // NOP
@@ -35,12 +37,13 @@ public interface ObjectFactory {
 
   /**
    * Creates a new object with default constructor.
+   * 使用默认的构造方法创建一个指定类型的实例
    *
    * @param <T>
-   *          the generic type
+   *          the generic type 泛型
    * @param type
-   *          Object type
-   * @return the t
+   *          Object type 指定类型
+   * @return the t 实例
    */
   <T> T create(Class<T> type);
 

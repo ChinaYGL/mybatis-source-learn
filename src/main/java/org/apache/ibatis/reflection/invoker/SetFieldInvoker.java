@@ -20,11 +20,17 @@ import java.lang.reflect.Field;
 import org.apache.ibatis.reflection.Reflector;
 
 /**
+ * 用于执行设置字段值的反射操作
+ *
  * @author Clinton Begin
  */
 public class SetFieldInvoker implements Invoker {
   private final Field field;
 
+  /**
+   * 构造方法需要传入一个Field字段
+   * @param field 字段
+   */
   public SetFieldInvoker(Field field) {
     this.field = field;
   }
@@ -32,9 +38,11 @@ public class SetFieldInvoker implements Invoker {
   @Override
   public Object invoke(Object target, Object[] args) throws IllegalAccessException {
     try {
+      // 基于反射设置字段值
       field.set(target, args[0]);
     } catch (IllegalAccessException e) {
       if (Reflector.canControlMemberAccessible()) {
+        // 修改字段访问权限
         field.setAccessible(true);
         field.set(target, args[0]);
       } else {

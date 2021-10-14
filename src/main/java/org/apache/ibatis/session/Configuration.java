@@ -1,5 +1,5 @@
-/**
- *    Copyright 2009-2020 the original author or authors.
+/*
+ *    Copyright 2009-2021 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -142,7 +142,7 @@ public class Configuration {
    * Configuration factory class.
    * Used to create Configuration for loading deserialized unread properties.
    *
-   * @see <a href='https://code.google.com/p/mybatis/issues/detail?id=300'>Issue 300 (google code)</a>
+   * @see <a href='https://github.com/mybatis/old-google-code-issues/issues/300'>Issue 300 (google code)</a>
    */
   protected Class<?> configurationFactory;
 
@@ -627,9 +627,9 @@ public class Configuration {
   }
 
   /**
-   * Gets the default scripting lanuage instance.
+   * Gets the default scripting language instance.
    *
-   * @return the default scripting lanuage instance
+   * @return the default scripting language instance
    * @deprecated Use {@link #getDefaultScriptingLanguageInstance()}
    */
   @Deprecated

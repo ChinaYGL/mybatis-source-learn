@@ -23,7 +23,7 @@
     <groupId>org.mybatis</groupId>
     <artifactId>mybatis-parent</artifactId>
     <version>33</version>
-    <relativePath />
+    <relativePath>../parent/pom.xml</relativePath>
   </parent>
 
   <artifactId>mybatis</artifactId>

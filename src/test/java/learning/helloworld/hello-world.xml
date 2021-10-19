@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+  <settings>
+    <setting name="cacheEnabled" value="true"/>
+    <setting name="lazyLoadingEnabled" value="false"/>
+    <!--日志实现类，使用SLF4J-->
+    <setting name="logImpl" value="SLF4J"/>
+  </settings>
+
+  <!-- 和spring整合后 environments配置将废除 -->
+  <environments default="development">
+    <environment id="development">
+      <!-- 声明使用那种事务管理机制 JDBC/MANAGED -->
+      <transactionManager type="JDBC"/>
+      <!-- 配置数据库连接信息 -->
+      <dataSource type="POOLED">
+        <property name="driver" value="org.mariadb.jdbc.Driver"/>
+        <!-- 需要特殊处理 & 符号，转为&amp; -->
+        <property name="url" value="jdbc:mariadb://127.0.0.1:3306/mybatis?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC"/>
+        <property name="username" value="root"/>
+        <property name="password" value="123456"/>
+      </dataSource>
+    </environment>
+  </environments>
+
+  <mappers>
+    <mapper resource="learning/helloworld/user/UserMapper.xml" />
+  </mappers>
+</configuration>

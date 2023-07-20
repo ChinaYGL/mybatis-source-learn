@@ -17,6 +17,7 @@ package org.apache.ibatis.reflection;
 
 /**
  * ReflectorFactory接口主要实现对Reflector对象的创建和缓存
+ *
  */
 public interface ReflectorFactory {
 

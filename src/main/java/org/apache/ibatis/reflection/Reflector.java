@@ -380,8 +380,8 @@ public class Reflector {
 
   /**
    * 检验是否为有效的属性名称
-   * @param name
-   * @return
+   * @param name 名称
+   * @return 结果
    */
   private boolean isValidPropertyName(String name) {
     return (!name.startsWith("$") && !"serialVersionUID".equals(name) && !"class".equals(name));

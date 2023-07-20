@@ -16,11 +16,11 @@
       <transactionManager type="JDBC"/>
       <!-- 配置数据库连接信息 -->
       <dataSource type="POOLED">
-        <property name="driver" value="org.mariadb.jdbc.Driver"/>
+        <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
         <!-- 需要特殊处理 & 符号，转为&amp; -->
-        <property name="url" value="jdbc:mariadb://127.0.0.1:3306/mybatis?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC"/>
-        <property name="username" value="root"/>
-        <property name="password" value="123456"/>
+        <property name="url" value="jdbc:mysql://192.168.31.104:3306/mybatis?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC"/>
+        <property name="username" value="admin"/>
+        <property name="password" value="dcroot"/>
       </dataSource>
     </environment>
   </environments>

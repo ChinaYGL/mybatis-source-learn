@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-       Copyright 2009-2021 the original author or authors.
+       Copyright 2009-2023 the original author or authors.
 
        Licensed under the Apache License, Version 2.0 (the "License");
        you may not use this file except in compliance with the License.
        You may obtain a copy of the License at
 
-          http://www.apache.org/licenses/LICENSE-2.0
+          https://www.apache.org/licenses/LICENSE-2.0
 
        Unless required by applicable law or agreed to in writing, software
        distributed under the License is distributed on an "AS IS" BASIS,
@@ -17,7 +17,7 @@
 
 -->
 <document xmlns="http://maven.apache.org/XDOC/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+  xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 https://maven.apache.org/xsd/xdoc-2.0.xsd">
 
   <properties>
     <title>MyBatis 3 | 日志</title>
@@ -39,7 +39,7 @@
           Log4j 2
         </li>
         <li>
-          Log4j (deprecated since 3.5.9)
+          Log4j （3.5.9 起废弃）
         </li>
         <li>
           JDK logging
@@ -72,13 +72,13 @@ org.apache.ibatis.logging.LogFactory.useStdOutLogging();
       <p>关于 SLF4J、Apache Commons Logging、Apache Log4J 和 JDK Logging 的 API 介绍不在本文档介绍范围内。不过，下面的例子可以作为一个快速入门。关于这些日志框架的更多信息，可以参考以下链接：</p>
       <ul>
         <li>
-          <a href="http://www.slf4j.org/">SLF4J</a>
+          <a href="https://www.slf4j.org/">SLF4J</a>
         </li>
         <li>
-          <a href="http://commons.apache.org/logging">Apache Commons Logging</a>
+          <a href="https://commons.apache.org/proper/commons-logging/">Apache Commons Logging</a>
         </li>
         <li>
-          <a href="http://logging.apache.org/log4j/">Apache Log4j 1.x and 2.x</a>
+          <a href="https://logging.apache.org/log4j/2.x/">Apache Log4j 2.x</a>
         </li>
         <li>
           <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/logging/overview.html">JDK Logging API</a>
@@ -97,7 +97,7 @@ org.apache.ibatis.logging.LogFactory.useStdOutLogging();
         </p>
         <p>对于 web 应用或企业级应用，则需要将 <code>logback-classic.jar</code>, <code>logback-core.jar</code> and <code>slf4j-api.jar</code> 添加到 <code>WEB-INF/lib</code> 目录下；对于独立应用，可以将它添加到JVM 的 <code>-classpath</code> 启动参数中。
         </p>
-        <p>If you use the maven, you can download jar files by adding following settings on your <code>pom.xml</code>.
+        <p>如果你使用 maven, 你可以通过在 <code>pom.xml</code> 中添加下面的依赖来下载 jar 文件。
         </p>
 <source><![CDATA[
 <dependency>
@@ -178,7 +178,7 @@ public interface BlogMapper {
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.mybatis.example.BlogMapper">
   <select id="selectBlog" resultType="Blog">
     select * from Blog where id = #{id}
@@ -186,8 +186,8 @@ public interface BlogMapper {
 </mapper>
 ]]></source>
 
-		<p>如需对 XML 文件记录日志，只要对命名空间增加日志记录功能即可：
-		</p>
+    <p>如需对 XML 文件记录日志，只要对命名空间增加日志记录功能即可：
+    </p>
 
 <source><![CDATA[
 <logger name="org.mybatis.example.BlogMapper">
@@ -195,7 +195,7 @@ public interface BlogMapper {
 </logger>
 ]]></source>
 
-		<p>要记录具体语句的日志可以这样做：</p>
+    <p>要记录具体语句的日志可以这样做：</p>
 
 <source><![CDATA[
 <logger name="org.mybatis.example.BlogMapper.selectBlog">
@@ -203,17 +203,17 @@ public interface BlogMapper {
 </logger>
 ]]></source>
 
-		<p>你应该注意到了，为映射器接口和 XML 文件添加日志功能的语句毫无差别。
-		</p>
+    <p>你应该注意到了，为映射器接口和 XML 文件添加日志功能的语句毫无差别。
+    </p>
 
-		<p><span class="label important">注意</span> 如果你使用的是 SLF4J 或 Log4j 2，MyBatis 将以 <code>MYBATIS</code> 这个值进行调用。</p>
+    <p><span class="label important">注意</span> 如果你使用的是 SLF4J 或 Log4j 2，MyBatis 将以 <code>MYBATIS</code> 这个值进行调用。</p>
 
         <p>配置文件 <code>log4j.properties</code> 的余下内容是针对日志输出源的，这一内容已经超出本文档范围。关于 Logback 的更多内容，可以参考<a href="https://logback.qos.ch/">Logback</a> 的网站。不过，你也可以简单地做做实验，看看不同的配置会产生怎样的效果。
         </p>
 
     <p></p>
     <h4>
-      Configuration example for Log4j 2
+      Log4j 2 配置示例
     </h4>
 
     <p><code>pom.xml</code></p>
@@ -250,7 +250,7 @@ public interface BlogMapper {
 
     <p></p>
     <h4>
-      Configuration example for Log4j
+      Log4j 配置示例
     </h4>
 
     <p><code>pom.xml</code></p>
@@ -277,7 +277,7 @@ log4j.appender.stdout.layout.ConversionPattern=%5p [%t] - %m%n
 
     <p></p>
     <h4>
-      Configuration example for JDK logging
+      JDK logging 配置示例
     </h4>
 
     <p><code>logging.properties</code></p>

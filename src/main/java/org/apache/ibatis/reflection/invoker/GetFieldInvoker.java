@@ -1,11 +1,11 @@
 /*
- *    Copyright 2009-2021 the original author or authors.
+ *    Copyright 2009-2023 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
  *    You may obtain a copy of the License at
  *
- *       http://www.apache.org/licenses/LICENSE-2.0
+ *       https://www.apache.org/licenses/LICENSE-2.0
  *
  *    Unless required by applicable law or agreed to in writing, software
  *    distributed under the License is distributed on an "AS IS" BASIS,
@@ -20,17 +20,11 @@ import java.lang.reflect.Field;
 import org.apache.ibatis.reflection.Reflector;
 
 /**
- * 用于执行读取字段值的反射操作
- *
  * @author Clinton Begin
  */
 public class GetFieldInvoker implements Invoker {
   private final Field field;
 
-  /**
-   * 构造方法需要传入一个Field字段
-   * @param field 字段
-   */
   public GetFieldInvoker(Field field) {
     this.field = field;
   }
@@ -38,16 +32,13 @@ public class GetFieldInvoker implements Invoker {
   @Override
   public Object invoke(Object target, Object[] args) throws IllegalAccessException {
     try {
-      // 基于反射获取字段值
       return field.get(target);
     } catch (IllegalAccessException e) {
       if (Reflector.canControlMemberAccessible()) {
-        // 修改字段访问权限
         field.setAccessible(true);
         return field.get(target);
-      } else {
-        throw e;
       }
+      throw e;
     }
   }
 

@@ -31,6 +31,7 @@ public class HelloWorldTest {
       // 通过SqlSessionFactory获取一个SqlSession
       SqlSession sqlSession = sqlSessionFactory.openSession()
     ) {
+      // 从mybatis中获取UserMapper代理对象
       UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
 
       final int id = 1;

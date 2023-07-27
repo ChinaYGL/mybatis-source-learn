@@ -24,21 +24,23 @@
       <pattern>%d{HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n</pattern>
     </encoder>
   </appender>
-  <appender name="lastEventSavedAppender"
-            class="org.apache.ibatis.session.AutoMappingUnknownColumnBehaviorTest$LastEventSavedAppender"/>
+
+  <appender name="lastEventSavedAppender" class="org.apache.ibatis.session.AutoMappingUnknownColumnBehaviorTest$LastEventSavedAppender"/>
 
   <logger name="org.apache.ibatis">
     <level value="error"/>
   </logger>
+
   <logger name="org.apache.ibatis.logging">
     <level value="debug"/>
   </logger>
+
   <logger name="org.apache.ibatis.session.AutoMappingUnknownColumnBehavior">
     <level value="warn"/>
     <appender-ref ref="lastEventSavedAppender"/>
   </logger>
 
-  <root level="error">
+  <root>
     <appender-ref ref="stdout"/>
   </root>
 
